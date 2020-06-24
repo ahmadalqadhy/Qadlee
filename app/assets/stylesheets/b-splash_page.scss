@@ -170,10 +170,9 @@
 }
 
 .error-messages {
-    position: relative;
+    position: fixed;
     z-index: 900;
-    top: 72%;
-    left: 39%;
+    top: 100%;
     width: 300px;
     text-align: center;
 }
