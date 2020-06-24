@@ -169,6 +169,30 @@
     color: black;
 }
 
-.switch-paths, .button, .home-page-logo, #demo-login {
+.error-messages {
+    position: relative;
+    z-index: 900;
+    top: 72%;
+    left: 39%;
+    width: 300px;
+    text-align: center;
+}
+
+.switch-paths, .button, .home-page-logo, #demo-login, .navButtons {
     cursor: pointer;
+}
+
+.navButtons {
+    position: fixed;
+    z-index: 999;
+    top: 40%;
+    left: 4%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.navButtons:hover {
+    opacity: 1;
 }

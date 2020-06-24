@@ -80,6 +80,10 @@ class LoginForm extends React.Component {
     //     }
     // }
 
+    componentDidMount(){
+        this.props.clearErrors()
+    }
+
     render() {
         return (
             <div className="background">
@@ -104,10 +108,13 @@ class LoginForm extends React.Component {
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
-                            {this.renderErrors()}
+                            <br/>
                             <input className="button" id="signup" type="submit" value="Log In" />
                         </div>
                     </form>
+                </div>
+                <div className="error-messages">
+                    {this.renderErrors()}
                 </div>
             </div>
         );

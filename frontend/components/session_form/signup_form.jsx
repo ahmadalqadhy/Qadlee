@@ -12,6 +12,10 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors()
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -74,10 +78,13 @@ class SignupForm extends React.Component {
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
-                            {this.renderErrors()}
+                            <br/>
                             <input className="button" id="signup" type="submit" value="Sign up" />
                         </div>
                     </form>
+                </div>
+                <div className="error-messages">
+                    {this.renderErrors()}
                 </div>
             </div>
         );
