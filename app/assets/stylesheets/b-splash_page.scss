@@ -1,0 +1,174 @@
+.background {
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    background-image: url(https://wallpapersmug.com/large/cca584/blue-violet-art-texture.jpg)
+}
+
+.login-form-container {
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    text-align: center;
+    color:white;
+}
+
+#second-container{
+    background-color: #30e02d;
+}
+
+#just-q {
+    color: #30e02d;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 3px;
+}
+
+#third-container{
+    background-color: #9d8cff;
+    text-align: left;
+}
+
+#fourth-container{
+    background-color: #04055e;
+    text-align: left;
+}
+
+#fifth-container{
+    background-color: #ffa805;
+    text-align: center;
+}
+
+#easy-to-use {
+    font-size: 30px;
+}
+
+.cheese {
+    height: 100%;
+    width: 100%;
+}
+
+.background-img{
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    display: block;
+}
+
+.splash-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+}
+
+#second-splash {
+    max-width: 520px;
+}
+
+#third-splash {
+    max-width: 300px;
+    top: 20%;
+    left: 30%;
+}
+
+#fourth-splash {
+    max-width: 300px;
+    top: 50%;
+    left: 70%;
+}
+
+.button, .login-input {
+    width: 300px;
+    height: 50px;
+    margin: 5px;
+    background-color: white;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #424445 ;
+    border-radius: 2px;
+    outline: none;
+}
+
+#signup{
+    background-color: #54c7f7;
+    color: white;
+    margin-top: 35px;
+}
+
+.home-page-logo{
+    font-size: 80px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.home-page-message {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2px;
+    font-size: 15px;
+}
+
+.login-input{
+    margin: 0;
+    border-radius: 0px;
+    font-weight: lighter;
+    color: #424445;
+    width: 300px;
+    outline: none;
+}
+
+.error-list{
+    background: rgba(0,0,0,0.7);
+    margin-top: 10px;
+}
+
+.error-item {
+    list-style: none;
+    margin: 0px;
+    color: #c8ccc9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.switch-paths {
+    float: right;
+    margin: 10px;
+    background: rgba(0,0,0,0.4);
+    color: #c8ccc9;
+    border: none;
+    height: 30px;
+    width: 100px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2px;
+    outline: none;
+}
+
+.switch-paths:active{
+    background-color: white;
+    color: black;
+}
+
+.switch-paths, .button, .home-page-logo, #demo-login {
+    cursor: pointer;
+}
