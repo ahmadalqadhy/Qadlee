@@ -4,6 +4,8 @@ import Root from './components/root'
 
 import configureStore from './store/store'
 
+import { requestPosts, requestPost, deletePost } from './actions/post_actions'
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -27,4 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //Test Stuff
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.requestPosts = requestPosts
+    window.requestPost = requestPost
+    window.deletePost = deletePost
 });
