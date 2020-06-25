@@ -12,7 +12,7 @@ const mapStateToProps = ({ session, entities }) => {
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    openModal: () => dispatch(openModal('textform')),
+    openModal: (posttype) => dispatch(openModal(posttype)),
     closeModal: () => dispatch(closeModal())
 });
 

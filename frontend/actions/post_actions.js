@@ -19,24 +19,22 @@ const removePost = postId => ({
     postId
 })
 
-export const requestPosts = () => (
+export const requestPosts = () => dispatch => (
     PostAPIUtil.fetchPosts()
-        .then(posts => {
-            return (dispatch(receiveAllPosts(posts)))
-        })
+        .then(posts => dispatch(receiveAllPosts(posts)))
 )
 
-export const requestPost = () => (
+export const requestPost = () => (dispatch) => (
     PostAPIUtil.fetchPost()
         .then(post => dispatch(receivePost(post)))
 )
 
-export const createPost = (post) => (
-    PostAPIUtil.createPost(post)
-        .then(post => dispatch(receivePost(post)))
+export const createPost = (post) => (dispatch) => (
+    PostAPIUtil.createPost(post).then(post => dispatch(receivePost(post)))
 )
 
-export const deletePost = (postId) => (
+
+export const deletePost = (postId) => (dispatch) (
     PostAPIUtil.deletePost()
         .then( () => dispatch(removePost(postId)))
 )

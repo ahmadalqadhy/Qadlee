@@ -1,0 +1,56 @@
+.modal-form{
+    width: 542px;
+    height: 270px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.text-form-title-input{
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    outline: none;
+    margin: 15px 0px 15px 0px;
+}
+
+.text-form-body-input, .chat-form-body-input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    outline: none;
+    width: 532px;
+    height: 120px;
+    border: none;
+}
+
+.chat-form-body-input{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.post-button-area{
+    width: 535px;
+    height: 30px;
+    align-items: center;
+    border-top: 1px solid lightgrey;
+}
+
+.post-button {
+    position: relative;
+    border: none;
+    border-radius: 2px;
+    background-color: #54c7f7;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    width: 80px;
+    height: 30px;
+    float: right;
+    top: 50%;
+}
+
+.form-username {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}

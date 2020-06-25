@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import TextFormContainer from '../post_forms/text_form_container';
+import ChatFormContainer from '../post_forms/chat_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -11,6 +12,9 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'textform':
             component = <TextFormContainer />;
+            break;
+        case 'chatform':
+            component = <ChatFormContainer />;
             break;
         default:
             return null;
