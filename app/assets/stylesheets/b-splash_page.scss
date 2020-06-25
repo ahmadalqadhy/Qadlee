@@ -186,12 +186,15 @@
     z-index: 999;
     top: 40%;
     left: 4%;
+}
+
+.navButtonsItem {
     color: white;
     font-size: 30px;
     font-weight: bold;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
-.navButtons:hover {
+.navButtonsItem:hover {
     opacity: 1;
 }

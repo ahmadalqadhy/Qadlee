@@ -155,14 +155,14 @@ class Greeting extends React.Component {
 
         return (
             <>  
-                <div className="navButtons">
+                <div className="navButtons" >
                     <ul>
-                        <li onClick={this.handleClick1}>○</li>
-                        <li onClick={this.handleClick2}>○</li>
-                        <li onClick={this.handleClick3}>○</li>
-                        <li onClick={this.handleClick4}>○</li>
-                        <li onClick={this.handleClick5}>○</li>
-                        <li onClick={this.handleClick6}>○</li>
+                        <li className="navButtonsItem" onClick={this.handleClick1}>●</li>
+                        <li className="navButtonsItem" onClick={this.handleClick2}>●</li>
+                        <li className="navButtonsItem" onClick={this.handleClick3}>●</li>
+                        <li className="navButtonsItem" onClick={this.handleClick4}>●</li>
+                        <li className="navButtonsItem" onClick={this.handleClick5}>●</li>
+                        <li className="navButtonsItem" onClick={this.handleClick6}>●</li>
                     </ul>
                 </div>
                 <div ref={this.myDivToFocus1} className="container" id='first-container'>
