@@ -28,23 +28,35 @@ class SignupForm extends React.Component {
         this.props.signup(user);
     }
 
+    // renderErrors() {
+    //     let str = this.props.errors.join()
+    //     let arr = str.split(",")
+    //     return (
+    //         <ul className="error-list">
+    //             {arr.map(error => (
+    //                 <li className="error-item" >{error}</li>
+    //             ))}
+    //         </ul>
+    //     )
+    //     return (
+    //         <div className="error-list">
+    //             {arr.map(error => (
+    //                 <p className="error-item" >{error}</p>
+    //             ))}
+    //         </div>
+    //     )
+    // }
+
     renderErrors() {
-        let str = this.props.errors.join()
-        let arr = str.split(",")
-        // return (
-        //     <ul className="error-list">
-        //         {arr.map(error => (
-        //             <li className="error-item" >{error}</li>
-        //         ))}
-        //     </ul>
-        // )
         return (
-            <div className="error-list">
-                {arr.map(error => (
-                    <p className="error-item" >{error}</p>
+            <ul className="error-list">
+                {this.props.errors.map((error, i) => (
+                    <li className="error-item" key={`error-${i}`}>
+                        {error}
+                    </li>
                 ))}
-            </div>
-        )
+            </ul>
+        );
     }
 
     render() {

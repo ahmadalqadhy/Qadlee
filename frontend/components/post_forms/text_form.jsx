@@ -1,4 +1,5 @@
 import React from 'react'
+// import ModalContainer from '../modal/modal'
 
 class TextForm extends React.Component {
     constructor(props){
@@ -14,7 +15,8 @@ class TextForm extends React.Component {
         return(
             <>
                 <h2>{this.props.currentUser.username}</h2>
-                <button>{this.props.closeModal}</button>
+                <button onClick={() => this.props.closeModal()}>CLOSE MODAL</button>
+                {/* <ModalContainer/> */}
             </>
         )
     }

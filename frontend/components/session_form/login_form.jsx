@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
             .then(() => this.props.history.push("/dashboard"))
     }
 
-    renderErrors() {
+    // renderErrors() {
         // return (
         //     <ul>
         //         {this.props.errors.map((error, i) => (
@@ -34,16 +34,16 @@ class LoginForm extends React.Component {
         //         ))}
         //     </ul>
         // );
-        let str = this.props.errors.join()
-        let arr = str.split(",")
-        return (
-            <div className="error-list">
-                {arr.map(error => (
-                    <p className="error-item" >{error}</p>
-                ))}
-            </div>
-        )
-    }
+    //     let str = this.props.errors.join()
+    //     let arr = str.split(",")
+    //     return (
+    //         <div className="error-list">
+    //             {arr.map(error => (
+    //                 <p className="error-item" >{error}</p>
+    //             ))}
+    //         </div>
+    //     )
+    // }
 
     //     render() {
     //         return (
@@ -79,6 +79,20 @@ class LoginForm extends React.Component {
     //         );
     //     }
     // }
+
+    renderErrors() {
+        return (
+            <ul className="error-list">
+                {this.props.errors.map((error, i) => (
+                    <li className="error-item" key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    
 
     componentDidMount(){
         this.props.clearErrors()
