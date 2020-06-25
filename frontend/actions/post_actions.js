@@ -32,7 +32,7 @@ export const requestPost = () => (
 )
 
 export const createPost = (post) => (
-    PostAPIUtil.createPost()
+    PostAPIUtil.createPost(post)
         .then(post => dispatch(receivePost(post)))
 )
 
