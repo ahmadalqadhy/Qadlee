@@ -1,9 +1,13 @@
-.modal-form{
+.modal-form, .modal-quote-form{
     width: 542px;
     height: 270px;
     padding: 20px;
     background-color: white;
     border-radius: 5px;
+}
+
+.modal-quote-form {
+    height: 200px;
 }
 
 .text-form-title-input{
@@ -53,4 +57,23 @@
     color: black;
     font-weight: bold;
     font-size: 18px;
+}
+
+.quote-form-title-input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px;
+    outline: none;
+    max-width: 532px;
+    height: 55px;
+    border: none;
+    margin-top: 30px;
+}
+
+.quote-form-body-input{
+    border: none;
+    width: 532px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    outline: none;
+    margin: 15px 0px 15px 0px;
 }

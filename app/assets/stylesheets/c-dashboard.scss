@@ -1,7 +1,8 @@
 .dashboard-root{
-    border: 5px solid orange;
-    background-color: #04055e;
-    color: wheat;
+  border: 5px solid orange;
+  background-color: #001935;
+  color: wheat;
+  text-align: center;
 }
 
 .modal-background {
@@ -21,7 +22,69 @@
   transform: translate(-50%, -50%);
 }
 
-.post-index{
-  border: 2px solid red;
-  height: 300px;
+.content-in-dashboard{
+  width: 980px;
+  border: 2px solid greenyellow;
+  display: inline-block;
 }
+
+.left-side-of-dashboard{
+  width: 626px;
+  margin: 30px;
+}
+
+.form-icons{
+  display: flex;
+  width: inherit;
+  background-color: white;
+  border-radius: 3px;
+  margin: 30px 0px 30px 0px;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.form-icon {
+  font-size: 15px;
+  margin: 20px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fas{
+  font-size: 50px;
+  margin: 0px 0px 5px 0px;
+  cursor: pointer;
+}
+
+.fas:hover{
+  margin-top: -5px;
+}
+
+.fa-font{
+  color: black;
+}
+
+.fa-camera{
+ color: red;
+}
+
+.fa-quote-right{
+  color: orange;
+}
+
+.fa-link{
+  color: #14de09;
+}
+
+.fa-comments{
+  color: #0cc0ed;
+}
+
+.fa-headphones{
+  color: #620ced;
+}
+
+.fa-video {
+  color: #f255dd;
+}
+

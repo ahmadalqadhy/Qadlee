@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import TextFormContainer from '../post_forms/text_form_container';
 import ChatFormContainer from '../post_forms/chat_form_container';
+import QuoteFormContainer from '../post_forms/quote_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -15,6 +16,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'chatform':
             component = <ChatFormContainer />;
+            break;
+        case 'quoteform':
+            component = <QuoteFormContainer />;
             break;
         default:
             return null;

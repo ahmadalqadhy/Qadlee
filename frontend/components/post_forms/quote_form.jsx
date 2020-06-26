@@ -1,11 +1,11 @@
 import React from 'react'
 // import ModalContainer from '../modal/modal'
 
-class TextForm extends React.Component {
-    constructor(props){
+class QuoteForm extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
-            post_type: "text",
+            post_type: "quote",
             title: "",
             body: ""
         }
@@ -18,7 +18,7 @@ class TextForm extends React.Component {
     //     this.props.closeModal
     // }
 
-    update(field){
+    update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         })
@@ -28,27 +28,27 @@ class TextForm extends React.Component {
         e.preventDefault();
         const post = Object.assign({}, this.state);
         this.props.createPost(post)
-            // .then(() => this.props.history.push("/dashboard"))
+        // .then(() => this.props.closeModal)
     }
 
-    render (){
-        return(
-            <div className="modal-form">
+    render() {
+        return (
+            <div className="modal-quote-form">
                 <h2 className="form-username">{this.props.currentUser.username}</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
-                        placeholder="Title"
+                        placeholder='"Quote"'
                         value={this.state.title}
                         onChange={this.update("title")}
-                        className="text-form-title-input"/>
+                        className="quote-form-title-input"/>
                     <br/>
-                    <textarea
-                        placeholder="Your text here"
+                    <input type="text"
+                        placeholder='- Source'
                         value={this.state.body}
                         onChange={this.update("body")}
-                        className="text-form-body-input"></textarea>
+                        className="quote-form-body-input" />
                     <div className="post-button-area">
-                        <input type="submit" value="Post" className="post-button"/>
+                        <input type="submit" value="Post" className="post-button" />
                     </div>
                 </form>
                 {/* <button onClick={() => this.props.closeModal()}>CLOSE MODAL</button> */}
@@ -59,4 +59,4 @@ class TextForm extends React.Component {
     }
 }
 
-export default TextForm
+export default QuoteForm

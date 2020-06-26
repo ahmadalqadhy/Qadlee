@@ -1,7 +1,9 @@
 class Api::PostsController < ApplicationController
    
     def index
-        @posts = Post.all
+        backward_posts = Post.all
+        @posts = backward_posts.reverse
+        # debugger
         render :index
     end
 

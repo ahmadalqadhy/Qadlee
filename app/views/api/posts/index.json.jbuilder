@@ -1,5 +1,5 @@
 # @posts.each do |post|
-#     json.extract! post, :id, :post_type
+#     json.extract! post, :id, :title, :body, :post_type, :author_id
 #     # json.photoUrl url_for(post.photo)
 # end
 
