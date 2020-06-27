@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { createPost } from '../../actions/post_actions'
-import ImageForm from './Image_form'
+import ImageForm from './image_form'
 import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = ({ session, entities }) => ({
