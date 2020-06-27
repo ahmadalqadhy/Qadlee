@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { createPost } from '../../actions/post_actions'
-import TextForm from './text_form'
+import AudioForm from './audio_form'
 import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = ({ session, entities }) => ({
@@ -9,7 +9,7 @@ const mSTP = ({ session, entities }) => ({
 
 const mDTP = dispatch => ({
     createPost: post => dispatch(createPost(post)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal)
 })
 
-export default connect(mSTP, mDTP)(TextForm)
+export default connect(mSTP, mDTP)(AudioForm)

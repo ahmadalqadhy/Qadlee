@@ -1,0 +1,84 @@
+// -------------- text form modal ---------------
+
+.modal-container{
+    width: 625px;
+    height: 290px;
+}
+
+.text-form-container{
+    width: 500px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    float: right;
+}
+
+.form-username{
+    display: inline-block;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.text-form-title-input{
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    font-size: 33px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    outline: none;
+}
+
+.text-form-body-input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: 500px;
+    height: 82px;
+    outline: none;
+    resize: none;
+}
+
+.post-button{
+    float: right;
+    margin-top: 15px;
+    border: none;
+    border-radius: 1px;
+    color: white;
+    font-size: 14px;
+    background-color: #00b8ff;
+    width: 75px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+.close-button{
+    margin-top: 15px;
+    border: none;
+    border-radius: 1px;
+    color: white;
+    font-size: 14px;
+    background-color: #9fa1a1;
+    width: 60px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+.close-button:active, .post-button:active{
+    box-shadow: inset 0 0 3px black;
+}
+
+.form-profile-pic{
+    max-width: 65px;
+    max-height: 65px;
+    float: left;
+    border-radius: 4px;
+}

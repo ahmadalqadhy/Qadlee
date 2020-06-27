@@ -22,7 +22,6 @@ const removePost = postId => ({
 export const requestPosts = () => dispatch => (
     PostAPIUtil.fetchPosts()
         .then(posts => {
-            // debugger
             return (
                 dispatch(receiveAllPosts(posts))
             )
@@ -35,9 +34,10 @@ export const requestPost = () => (dispatch) => (
         .then(post => dispatch(receivePost(post)))
 )
 
-export const createPost = (post) => (dispatch) => (
+export const createPost = (post) => (dispatch) => {
+   return  (
     PostAPIUtil.createPost(post).then(post => dispatch(receivePost(post)))
-)
+)}
 
 
 export const deletePost = (postId) => (dispatch) (

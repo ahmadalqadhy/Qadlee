@@ -1,9 +1,8 @@
 class Api::PostsController < ApplicationController
    
     def index
-        backward_posts = Post.all
-        @posts = backward_posts.reverse
-        # debugger
+        @posts = Post.all
+        # @posts = backward_posts.reverse
         render :index
     end
 
@@ -35,7 +34,7 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:post_type, :title, :body, :author_id)
+        params.require(:post).permit(:post_type, :title, :body, :author_id, :photo)
     end
 
 end
