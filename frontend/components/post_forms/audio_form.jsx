@@ -1,20 +1,100 @@
+// import React from 'react'
+
+// class AudioForm extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             post_type: 'audio',
+//             photoFile: null,
+//             photoUrl: null
+//         }
+//         this.handleSubmit = this.handleSubmit.bind(this)
+//         this.handleFile = this.handleFile.bind(this)
+//     }
+
+//     // handleFile(e){
+//     //     this.setState({photoFile: e.currentTarget.files[0]})
+//     // }
+
+//     handleFile(e) {
+//         const file = e.currentTarget.files[0];
+//         const fileReader = new FileReader();
+//         fileReader.onloadend = () => {
+//             this.setState({ photoFile: file, photoUrl: fileReader.result });
+//         };
+//         if (file) {
+//             fileReader.readAsDataURL(file);
+//         }
+//     }
+
+
+//     handleSubmit(e) {
+//         event.preventDefault();
+//         event.stopPropagation()
+//         const formData = new FormData()
+//         formData.append('post[post_type]', this.state.post_type)
+//         formData.append('post[photo]', this.state.photoFile)
+//         $.ajax({
+//             url: '/api/posts',
+//             method: "POST",
+//             data: formData,
+//             contentType: false,
+//             processData: false
+//         })
+//     }
+
+//     render() {
+//         return (
+//             <div className="modal-image-form">
+//                 <h2 className="form-username">{this.props.currentUser.username}</h2>
+//                 <form onSubmit={this.handleSubmit}>
+//                     <input type="file" onChange={this.handleFile} />
+//                     <div className="post-button-area">
+//                         <input type="submit" value="Post" className="post-button" />
+//                     </div>
+//                 </form>
+//                 {/* <button onClick={() => this.props.closeModal()}>CLOSE MODAL</button> */}
+//                 {/* <button onClick={this.handleClick}>CLOSE MODAL</button> */}
+//                 {/* <ModalContainer/> */}
+//             </div>
+//         )
+//     }
+
+
+// }
+
+// export default AudioForm
+
 import React from 'react'
 
 class AudioForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            title: '',
             post_type: 'audio',
             photoFile: null,
             photoUrl: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleFile = this.handleFile.bind(this)
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(e) {
+        e.preventDefault()
+        this.props.closeModal()
     }
 
     // handleFile(e){
     //     this.setState({photoFile: e.currentTarget.files[0]})
     // }
+
+    update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        })
+    }
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
@@ -32,6 +112,7 @@ class AudioForm extends React.Component {
         event.preventDefault();
         event.stopPropagation()
         const formData = new FormData()
+        formData.append('post[title]', this.state.title)
         formData.append('post[post_type]', this.state.post_type)
         formData.append('post[photo]', this.state.photoFile)
         $.ajax({
@@ -40,26 +121,39 @@ class AudioForm extends React.Component {
             data: formData,
             contentType: false,
             processData: false
-        })
+        }).then(() => this.props.closeModal())
     }
 
     render() {
         return (
-            <div className="modal-image-form">
-                <h2 className="form-username">{this.props.currentUser.username}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="file" onChange={this.handleFile} />
-                    <div className="post-button-area">
-                        <input type="submit" value="Post" className="post-button" />
-                    </div>
-                </form>
-                {/* <button onClick={() => this.props.closeModal()}>CLOSE MODAL</button> */}
-                {/* <button onClick={this.handleClick}>CLOSE MODAL</button> */}
-                {/* <ModalContainer/> */}
+            <div className="modal-container">
+                <div className="image-container">
+                    <img className="form-profile-pic" src={this.props.currentUser.profilePicUrl} />
+                </div>
+                <div className="image-form-container">
+                    <h2 className="image-form-username">{this.props.currentUser.username}</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text"
+                            placeholder="Title"
+                            value={this.state.title}
+                            onChange={this.update("title")}
+                            className="image-form-title-input" />
+                        <br />
+                        <div className="image-form-input">
+                            <h2><i className="fas fa-headphones icon2"></i></h2>
+                            <h2>Upload some tunes</h2>
+                            <br />
+                            <input type="file" onChange={this.handleFile} />
+                        </div>
+                        <div className="post-button-area">
+                            <input type="submit" value="Post" className="link-post-button" />
+                        </div>
+                    </form>
+                    <button className='link-close-button' onClick={this.handleClick}>Close</button>
+                </div>
             </div>
         )
     }
-
 
 }
 

@@ -82,3 +82,191 @@
     float: left;
     border-radius: 4px;
 }
+
+
+//-------------------------------------
+//Image Form
+
+.image-form-container{
+    width: 540px;
+    height: 350px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    float: right;
+    color: black;
+}
+
+.image-form-username{
+    display: inline-block;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 20px;
+}
+
+.image-form-title-input{
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    font-size: 33px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    outline: none;
+}
+
+.image-form-input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: none;
+    border-top: 2px dashed darkgray;
+    border-bottom: 2px dashed darkgray;
+    background-color: #e6e6e6;
+    width: 455px;
+    height: 84px;
+    outline: none;
+    resize: none;
+    padding: 42px;
+    text-align: center;
+}
+
+.icon2 {
+    color: darkgray;
+}
+
+
+
+//-------------------------------------
+//Quote Form
+
+.quote-form-container{
+    width: 500px;
+    height: 240px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    float: right;
+}
+
+.quote-form-title-input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    font-size: 48px;
+    margin-top: 20px;
+    width: 500px;
+    outline: none;
+}
+
+.quote-form-body-input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: 500px;
+    height: 82px;
+    outline: none;
+}
+
+//-------------------------------------
+//Chat Form
+
+.chat-form-container{
+    width: 500px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    float: right;
+}
+
+.chat-form-body-input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: 500px;
+    height: 82px;
+    outline: none;
+    resize: none;
+}
+
+//------------------------------------------------
+//Link Form
+
+.link-form-container{
+    width: 540px;
+    height: 290px;
+    border-radius: 4px;
+    background-color: white;
+    text-align: left;
+    float: right;
+}
+
+.link-form-username{
+    display: inline-block;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 20px;
+}
+
+.link-form-title-input{
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    font-size: 33px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    outline: none;
+}
+
+.link-form-body-input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: none;
+    border-top: 2px dashed darkgray;
+    border-bottom: 2px dashed darkgray;
+    background-color: #e6e6e6;
+    width: 455px;
+    height: 24px;
+    outline: none;
+    resize: none;
+    padding: 42px;
+}
+
+.link-post-button{
+    float: right;
+    margin: 15px 20px 0px 0px;
+    border: none;
+    border-radius: 1px;
+    color: white;
+    font-size: 14px;
+    background-color: #00b8ff;
+    width: 75px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+.link-close-button{
+    margin: 15px 0px 0px 20px;
+    border: none;
+    border-radius: 1px;
+    color: white;
+    font-size: 14px;
+    background-color: #9fa1a1;
+    width: 60px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+}
+
+.link-close-button:active, .link-post-button:active{
+    box-shadow: inset 0 0 3px black;
+}

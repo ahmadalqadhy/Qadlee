@@ -9,7 +9,7 @@ const mSTP = ({ session, entities }) => ({
 
 const mDTP = dispatch => ({
     createPost: post => dispatch(createPost(post)),
-    closeModal: () => dispatch(closeModal)
+    closeModal: () => dispatch(closeModal())
 })
 
 export default connect(mSTP, mDTP)(LinkForm)
