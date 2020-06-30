@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-
+    @user.profile_pic.attach(io: open("app/assets/images/tumblr-pp.png"), filename: "tumblr-pp.png")
     if @user.save
       login(@user)
       render "api/users/show"

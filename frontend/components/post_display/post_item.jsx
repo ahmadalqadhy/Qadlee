@@ -5,8 +5,9 @@ import { deletePost } from '../../util/posts_api_util';
 const PostItem = ({ currentUser, post }) => {
 
     const textpost = () => (
-        <div>
+        <div className="textpost">
             <h1 className="textpost-title">{post.title}</h1>
+            <br/>
             <h3 className="textpost-body">{post.body}</h3>
         </div>
     )
@@ -39,7 +40,10 @@ const PostItem = ({ currentUser, post }) => {
     )
 
     const linkpost = () => (
-            <a href={post.body} target="blank"><h1>{post.body}</h1></a>
+        <div>
+            <a href={post.body} target="blank"><h1 className="linkpost-body">{post.body} ></h1></a>
+            <h2 className="linkpost-title">{post.title}</h2>
+        </div>
     )
 
     const chatpost = () => (

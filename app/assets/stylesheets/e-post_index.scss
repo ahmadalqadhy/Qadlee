@@ -83,15 +83,50 @@
 }
 
 .titlepost{
-  
+  padding: 20px;
+  position: relative;
 }
 
 .textpost-title{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
+  float: left;
+  width: 500px;
+  margin: 20px;
+  text-align: left;
 }
 
 .textpost-body{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  float: left;
+  text-align: left;
+  margin: 20px;
+  width: 500px;
+}
+
+.linkpost-body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  color: black;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.linkpost-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: left;
+  float: left;
+  width: 500px;
+  margin: 20px;
 }
