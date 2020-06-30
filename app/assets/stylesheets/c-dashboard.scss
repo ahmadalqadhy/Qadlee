@@ -24,34 +24,40 @@
 
 .content-in-dashboard{
   width: 980px;
-  border: 2px solid greenyellow;
   display: inline-block;
 }
 
 .left-side-of-dashboard{
   width: 625px;
-  margin: 85px ;
+}
+
+.dashboard-forms{
+  width: 625px;
+  height: 105px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .form-icons{
   display: flex;
-  width: inherit;
+  width: 540px;
+  height: 105px;
   background-color: white;
   border-radius: 3px;
-  margin: 30px 0px 30px 0px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   text-align: center;
 }
 
 .form-icon {
   font-size: 15px;
-  margin: 20px;
+  margin: 20px 15px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .fas{
-  font-size: 50px;
+  font-size: 40px;
   margin: 0px 0px 5px 0px;
   cursor: pointer;
 }
@@ -88,7 +94,7 @@
   color: #f255dd;
 }
 
-.test-video {
-  width: 625px;
-}
+//--------------index part---------
+
+
 

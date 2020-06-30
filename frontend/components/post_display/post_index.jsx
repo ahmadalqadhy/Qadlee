@@ -8,15 +8,16 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestPosts();
+        // this.props.requestUsers();
     }
 
     render() {
-        const { posts } = this.props;
+        const { posts, currentUser } = this.props;
         if (!this.props.posts) return null
         return (
             <div>
                 <ul>
-                    {posts.map(post => (<PostItem key={`post${post.id}`} post={post}/>))}
+                    {posts.map(post => (<PostItem key={`post${post.id}`} post={post} currentUser={currentUser}/>))}
                 </ul>
             </div>
         )

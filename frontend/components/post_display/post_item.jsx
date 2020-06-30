@@ -1,66 +1,102 @@
 import React from 'react';
 import { Link } from 'react-router-dom' 
+import { deletePost } from '../../util/posts_api_util';
 
-const PostItem = ({ post }) => {
+const PostItem = ({ currentUser, post }) => {
 
     const textpost = () => (
-        <li className='post-item'>
-            <h1 className="text-item-title">{post.title}</h1>
-            <h3 className="text-item-body">{post.body}</h3>
-        </li>
+        <div>
+            <h1 className="textpost-title">{post.title}</h1>
+            <h3 className="textpost-body">{post.body}</h3>
+        </div>
     )
 
     const imagepost = () => (
-        <li className='post-item'>
-            <img src={post.photoUrl}/>
-        </li>
+        <div>
+            <img className="imagepost" src={post.photoUrl}/>
+            <h2 className="caption">{post.title}</h2>
+        </div>
     )
 
     const quotepost = () => (
-        <li className='post-item'>
-            <h1 className="quote-item-title">{post.title}</h1>
-            <h3 className="quote-item-body">{post.body}</h3>
-        </li>
+            <div className="quotepost">
+                <h1 className="quotepost-title">{post.title}</h1>
+                <br/>
+                <h3 className="quotepost-body">{post.body}</h3>
+            </div>
     )
 
     const videopost = () => (
-        <li>
-            <video className="test-video" controls>
+            <video className="videopost" controls>
                 <source src={post.photoUrl} type="video/mp4"/>
             </video>
-        </li>
     )
 
     const audiopost = () => (
-        <li>
             <audio controls>
                 <source src={post.photoUrl} type="audio/mpeg" />
             </audio>
-        </li>
     )
 
     const linkpost = () => (
-        <li>
             <a href={post.body} target="blank"><h1>{post.body}</h1></a>
-        </li>
     )
 
     const chatpost = () => (
-        <li className='post-item'>
+        <div>
             <h1 className="text-item-title">{post.title}</h1>
             <h3 className="text-item-body">{post.body}</h3>
-        </li>
+        </div>
     )
 
+    const postUser = () =>(
+        <ul className="interaction-icons">
+            <li><i className="far fa-trash-alt item-icon"></i></li>
+            <li><i className="far fa-comment item-icon"></i></li>
+            <li><i className="fas fa-retweet item-icon"></i></li>
+            <li><i className="far fa-heart item-icon"></i></li>
+        </ul>
+    )
 
-    return (
-            // post.post_type === "text" ? textpost() 
-             post.post_type === "image" ? imagepost()
+    const otherUser = () =>(
+        <ul className="interaction-icons">
+            <li><i className="far fa-comment item-icon"></i></li>
+            <li><i className="fas fa-retweet item-icon"></i></li>
+            <li><i className="far fa-heart item-icon"></i></li>
+        </ul>
+    )
+
+    const interactionIcons = (
+        post.author_id === currentUser.id ? postUser()
+        : otherUser()
+    )
+
+    const postItem =  (
+            post.post_type === "text" ? textpost() 
+            : post.post_type === "image" ? imagepost()
             : post.post_type === "link" ? linkpost()
             : post.post_type === "chat" ? chatpost()  
             : post.post_type === "video" ? videopost() 
             : post.post_type === "audio" ? audiopost() 
-            : quotepost())
+            : quotepost()
+            )
+           
+    return (
+        <li className="post-container">
+            <img src={post.author.profilePicUrl} className="profile-pics"/>
+            <div className='actual-post'>
+                <div className = "username-area">
+                    <h2 className="post-username">{post.author.username}</h2>
+                </div>
+                <div className="post-content">
+                    {postItem}
+                </div>
+                <div>
+                    {interactionIcons}
+                </div>
+            </div>
+        </li>
+    )
 }
 
 export default PostItem
