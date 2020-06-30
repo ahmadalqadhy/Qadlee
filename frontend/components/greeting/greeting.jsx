@@ -151,7 +151,7 @@ class Greeting extends React.Component {
 
     render() {
 
-        const userDemo = { username: 'qadlee', password: 'Qadlee1234$' }
+        const userDemo = { username: 'demouser', password: 'demouser' }
 
         return (
             <>  
