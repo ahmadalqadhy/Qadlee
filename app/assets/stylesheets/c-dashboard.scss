@@ -1,5 +1,4 @@
 .dashboard-root{
-  border: 5px solid orange;
   background-color: #001935;
   text-align: center;
 }
@@ -56,13 +55,13 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.fas{
+.icon{
   font-size: 40px;
   margin: 0px 0px 5px 0px;
   cursor: pointer;
 }
 
-.fas:hover{
+.icon:hover{
   margin-top: -5px;
 }
 
@@ -97,4 +96,6 @@
 //--------------index part---------
 
 
-
+.icon2 {
+  font-size: 40px;
+}

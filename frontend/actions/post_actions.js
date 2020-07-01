@@ -39,9 +39,9 @@ export const createPost = (post) => (dispatch) => {
     PostAPIUtil.createPost(post).then(post => dispatch(receivePost(post)))
 )}
 
-
-export const deletePost = (postId) => (dispatch) (
-    PostAPIUtil.deletePost()
-        .then( () => dispatch(removePost(postId)))
-)
+export const deletePost = (postId) => dispatch => {
+    return(
+    PostAPIUtil.deletePost(postId)
+        .then(() => dispatch(removePost(postId)))
+)}
 

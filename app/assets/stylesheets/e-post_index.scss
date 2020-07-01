@@ -111,11 +111,12 @@
   font-weight: bold;
   text-align: left;
   float: left;
+  width: 460px;
   margin: 20px;
   padding: 20px;
   color: black;
   background-color: lightgray;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 a {
@@ -129,4 +130,28 @@ a {
   float: left;
   width: 500px;
   margin: 20px;
+}
+
+// .audiopost{
+//   padding: 20px;
+// }
+
+.audio {
+  float: left;
+  margin: 20px;
+  width: 500px;
+  outline: none;
+}
+
+.chatpost-body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
+  float: left;
+  text-align: left;
+  margin: 20px;
+  width: 500px;
+}
+
+.videopost {
+  outline: none;
 }

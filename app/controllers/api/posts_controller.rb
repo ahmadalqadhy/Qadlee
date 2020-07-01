@@ -1,8 +1,8 @@
 class Api::PostsController < ApplicationController
    
     def index
-        @posts = Post.all
-        # @posts = backward_posts.reverse
+        backward_posts = Post.all
+        @posts = backward_posts.reverse
         render :index
     end
 
@@ -23,6 +23,7 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post = current_user.posts.find_by(id: params[:id])
+        # debugger
         if @post
             @post.destroy
             render :show

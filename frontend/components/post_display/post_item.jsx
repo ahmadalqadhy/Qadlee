@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom' 
-import { deletePost } from '../../util/posts_api_util';
 
-const PostItem = ({ currentUser, post }) => {
+const PostItem = ({ currentUser, post, deletePost }) => {
 
     const textpost = () => (
         <div className="textpost">
@@ -28,15 +27,21 @@ const PostItem = ({ currentUser, post }) => {
     )
 
     const videopost = () => (
+        <div>
             <video className="videopost" controls>
                 <source src={post.photoUrl} type="video/mp4"/>
             </video>
+            <h2 className="caption">{post.title}</h2>
+        </div>
     )
 
     const audiopost = () => (
-            <audio controls>
+        <div className="audiopost">
+            <audio className="audio" controls>
                 <source src={post.photoUrl} type="audio/mpeg" />
             </audio>
+            <h2 className="caption">{post.title}</h2>
+        </div>
     )
 
     const linkpost = () => (
@@ -48,14 +53,14 @@ const PostItem = ({ currentUser, post }) => {
 
     const chatpost = () => (
         <div>
-            <h1 className="text-item-title">{post.title}</h1>
-            <h3 className="text-item-body">{post.body}</h3>
+            <h1 className="textpost-title">{post.title}</h1>
+            <h3 className="chatpost-body">{post.body}</h3>
         </div>
     )
 
     const postUser = () =>(
         <ul className="interaction-icons">
-            <li><i className="far fa-trash-alt item-icon"></i></li>
+            <li onClick={() => deletePost(post.id)}><i className="far fa-trash-alt item-icon"></i></li>
             <li><i className="far fa-comment item-icon"></i></li>
             <li><i className="fas fa-retweet item-icon"></i></li>
             <li><i className="far fa-heart item-icon"></i></li>
@@ -84,7 +89,7 @@ const PostItem = ({ currentUser, post }) => {
             : post.post_type === "audio" ? audiopost() 
             : quotepost()
             )
-           
+     
     return (
         <li className="post-container">
             <img src={post.author.profilePicUrl} className="profile-pics"/>

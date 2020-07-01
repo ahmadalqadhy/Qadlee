@@ -5,11 +5,12 @@ const PostsReducer = ( state = {}, action ) => {
 
     switch (action.type) {
         case RECEIVE_POSTS:
+            // debugger
             return action.posts
         case RECEIVE_POST:
             return Object.assign({}, { [action.post.id]: action.post },state)
         case REMOVE_POST:
-            let nextState = Object.assign({}. state)
+            let nextState = Object.assign({}, state)
             delete nextState[action.postId]
             return nextState
         default:

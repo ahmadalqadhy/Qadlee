@@ -6,18 +6,25 @@ class PostIndex extends React.Component {
         super(props);
     }
 
+    componentDidUpdate(prevProps) {
+        if(this.props.posts.length !== prevProps.posts.length){
+            this.props.requestPosts()
+        }
+    }
+
     componentDidMount() {
+        // debugger
         this.props.requestPosts();
-        // this.props.requestUsers();
     }
 
     render() {
         const { posts, currentUser } = this.props;
         if (!this.props.posts) return null
+        const backwardPosts = posts.reverse()
         return (
             <div>
                 <ul>
-                    {posts.map(post => (<PostItem key={`post${post.id}`} post={post} currentUser={currentUser}/>))}
+                    {backwardPosts.map(post => (<PostItem key={`post${post.id}`} post={post} currentUser={currentUser} deletePost={this.props.deletePost}/>))}
                 </ul>
             </div>
         )
