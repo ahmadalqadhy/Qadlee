@@ -2,15 +2,22 @@
 
 <a href="http://qadlee.herokuapp.com/#/">Live Site</a>
 
- ## Background
+## Table of Contents
+* <a href="#background">Background</a>
+* <a href="#technology">Technology</a>
+* <a href="#features">Features</a>
+  * <a href="#user-auth">User Auth</a>
+  * <a href="#post-creation">Post Creation</a>
+  * <a href="#post-dashboard">Post Dashboard</a>
+
+ <h2 id="background">Background</h2>
  
  Qadlee is a blog-style social media app that allows users to create and interact with posts of varying media. Qadlee was inspired by tumblr and carries much of the same features with some functional enhancements deemed necessary by the developer. The webiste allows users to create a secure account with a unique email and username, and a hashed and encrypted password. Users may also opt for a demo sign in so that they may expierence the app first hand before committing to an account. Once logged in, users can create seven different types of posts to Qadlee: Text, Image, Quote, Link, Chat, Audio, and Video.
  
  Qadlee was developed on a Ruby on Rails framework for the backend. User and Post text/relational data is housed within a PostgreSQL database with Amazon AWS S3 serving as the cloud storage for media such as images, videos, and audio. React and Redux serve to create a dynamic frontend for UX and hold another layer of secure user authentication while allowing users to experience smooth single page navigation.
+
  
- <a href="#user-auth">User Auth</a>
- 
- ## Technology
+ <h2 id="technology">Technology</h2>
  
  * Ruby on Rails
  * React.js
@@ -22,7 +29,7 @@
  * Webpack
  * SCSS/HTML
  
- ## Features
+ <h2 id="features">Features</h2>
  
  <h3 id="user-auth">User Auth</h3>
  
@@ -34,7 +41,7 @@
  * Certain URL routes are restricted to visitors depending on their logged in status (i.e a logged in user can't access the signup form, a logged out user can not create a post)
 
 
-### Post Creation
+<h3 id="post-creation">Post Creation</h3>
 
 * Users can create the following posts: Text, Image, Quote, Link, Chat, Video, Audio
 * Post creation forms are dynamic and appear as modals, powered by React and CSS
@@ -42,7 +49,7 @@
 * Amazon AWS stores a post's media content such as images and videos
 * Users may delete a created post at anytime so long as they are the author, which is validated on the backend and frontend
 
-### Post Dashboard
+<h3 id="post-dashboard">Post Dashboard</h3>
 
 * All posts created by a user and those they follow will appear on the user's custom dashboard
 * Videos and Images are auto-formatted to fit the post view within the dashboard
