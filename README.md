@@ -1,6 +1,6 @@
 # Qadlee
 
-<a href="http://qadlee.herokuapp.com/#/">Live Site</a>
+<a href="http://qadlee.herokuapp.com/#/" target="_blank">Live Site</a>
 
 ## Table of Contents
 * <a href="#background">Background</a>
