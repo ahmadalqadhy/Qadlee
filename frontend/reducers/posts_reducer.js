@@ -19,7 +19,7 @@ const PostsReducer = ( state = {}, action ) => {
         nextState = merge({}, state);
         likeId = Object.keys(action.like)[0];
         like = action.like[likeId];
-        debugger
+        // debugger
         nextState[like.post_id].liked_users.push(like.user_id);
         return nextState;
       case UNLIKE_POST:

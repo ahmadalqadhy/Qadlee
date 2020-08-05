@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
+    this.klass = "" 
   }
 
   textpost(post) {
@@ -78,11 +79,13 @@ class PostItem extends React.Component {
   }
 
   handleLike(likeParams) {
-      debugger
+      // debugger
       if (this.props.post.liked_users.includes(this.props.currentUser.id)){
         this.props.unlikePost(likeParams.post_id)
+        this.klass = "far fa-heart item-icon";
       } else {
         this.props.likePost(likeParams)
+        this.klass = "fas fa-heart item-icon";
       }
   }
 
@@ -106,7 +109,7 @@ class PostItem extends React.Component {
             <i className="fas fa-retweet item-icon"></i>
           </li>
           <li onClick={() => this.handleLike(likeParams)}>
-            <i className="far fa-heart item-icon"></i>
+            <i className={this.klass}></i>
           </li>
         </ul>
       );
@@ -117,6 +120,13 @@ class PostItem extends React.Component {
         user_id: parseInt(this.props.currentUser.id, 10),
         post_id: this.props.post.id,
       };
+
+    if (this.props.post.liked_users.includes(this.props.currentUser.id)) {
+        this.klass = "fas fa-heart item-icon";
+    } else {
+        this.klass = "far fa-heart item-icon";
+    }
+
       return (
         <ul className="interaction-icons">
           <li>
@@ -125,8 +135,8 @@ class PostItem extends React.Component {
           <li>
             <i className="fas fa-retweet item-icon"></i>
           </li>
-          <li onClick={() => this.props.likePost(likeParams)}>
-            <i className="far fa-heart item-icon"></i>
+          <li onClick={() => this.handleLike(likeParams)}>
+            <i className={this.klass}></i>
           </li>
         </ul>
       );
