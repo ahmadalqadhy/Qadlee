@@ -20,4 +20,13 @@ class Post < ApplicationRecord
 
     has_one_attached :photo
 
+    has_many :likes,
+        foreign_key: :post_id,
+        class_name: :Like,
+        dependent: :destroy
+
+    has_many :liked_users,
+        through: :likes,
+        source: :user
+
 end

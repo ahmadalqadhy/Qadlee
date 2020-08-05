@@ -22,12 +22,21 @@ class PostIndex extends React.Component {
         if (!this.props.posts) return null
         const backwardPosts = posts.reverse()
         return (
-            <div>
-                <ul>
-                    {backwardPosts.map(post => (<PostItem key={`post${post.id}`} post={post} currentUser={currentUser} deletePost={this.props.deletePost}/>))}
-                </ul>
-            </div>
-        )
+          <div>
+            <ul>
+              {backwardPosts.map((post) => (
+                <PostItem
+                  key={`post${post.id}`}
+                  post={post}
+                  currentUser={currentUser}
+                  deletePost={this.props.deletePost}
+                  likePost={this.props.likePost}
+                  unlikePost={this.props.unlikePost}
+                />
+              ))}
+            </ul>
+          </div>
+        );
     }
 }
 

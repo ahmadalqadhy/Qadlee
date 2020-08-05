@@ -42,6 +42,14 @@ class User < ApplicationRecord
 
     has_one_attached :profile_pic
 
+    has_many :liked_posts,
+        foreign_key: :user_id,
+        class_name: :Like,
+        dependent: :destroy
+
+    has_many :posts_liked,
+        through: :liked_posts,
+        source: :post
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
