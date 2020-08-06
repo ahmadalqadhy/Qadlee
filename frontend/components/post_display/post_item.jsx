@@ -95,6 +95,11 @@ class PostItem extends React.Component {
           post_id: this.props.post.id
         };
 
+      if (this.props.post.liked_users.includes(this.props.currentUser.id)) {
+        this.klass = "fas fa-heart item-icon";
+      } else {
+        this.klass = "far fa-heart item-icon";
+      }
     // debugger
 
       return (
@@ -105,7 +110,7 @@ class PostItem extends React.Component {
           <li>
             <i className="far fa-comment item-icon"></i>
           </li>
-          <li>
+          <li >
             <i className="fas fa-retweet item-icon"></i>
           </li>
           <li onClick={() => this.handleLike(likeParams)}>
