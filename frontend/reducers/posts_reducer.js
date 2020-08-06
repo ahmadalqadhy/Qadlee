@@ -1,5 +1,6 @@
 import { RECEIVE_POSTS, REMOVE_POST, RECEIVE_POST } from '../actions/post_actions'
 import { LIKE_POST, UNLIKE_POST } from "../actions/like_actions";
+import { RECEIVE_COMMENT } from "../actions/comment_actions"
 import { merge } from 'lodash';
 
 const PostsReducer = ( state = {}, action ) => {
@@ -14,6 +15,12 @@ const PostsReducer = ( state = {}, action ) => {
       case REMOVE_POST:
         nextState = Object.assign({}, state);
         delete nextState[action.postId];
+        return nextState;
+      case RECEIVE_COMMENT:
+        let post = action.comment.post_id;
+        nextState = merge({}, state)
+        // debugger
+        nextState[post].comments.push({body: action.comment.body, author_id: action.comment.author_id,});
         return nextState;
       case LIKE_POST:
         nextState = merge({}, state);

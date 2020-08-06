@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
     // debugger
     return({
     currentUser: state.entities.users[state.session.id],
-    posts: Object.keys(state.entities.posts).map(key => state.entities.posts[key])
+    posts: Object.keys(state.entities.posts).map(key => state.entities.posts[key]),
 })
 };
 

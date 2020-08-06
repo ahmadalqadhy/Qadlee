@@ -29,5 +29,6 @@
             json.photoUrl url_for(post.photo)
         end
         json.liked_users post.liked_user_ids
+        json.comments post.comments
     end
 end

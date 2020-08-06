@@ -29,4 +29,9 @@ class Post < ApplicationRecord
         through: :likes,
         source: :user
 
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :post_id,
+        class_name: :Comment
+
 end
