@@ -154,86 +154,181 @@ class Greeting extends React.Component {
         const userDemo = { username: 'demouser', password: 'demouser' }
 
         return (
-            <>  
-                <div className="navButtons" >
-                    <ul>
-                        <li className="navButtonsItem" onClick={this.handleClick1}>●</li>
-                        <li className="navButtonsItem" onClick={this.handleClick2}>●</li>
-                        <li className="navButtonsItem" onClick={this.handleClick3}>●</li>
-                        <li className="navButtonsItem" onClick={this.handleClick4}>●</li>
-                        <li className="navButtonsItem" onClick={this.handleClick5}>●</li>
-                        <li className="navButtonsItem" onClick={this.handleClick6}>●</li>
-                    </ul>
-                </div>
-                <div ref={this.myDivToFocus1} className="container" id='first-container'>
-                    <img className='background-img' src="https://www.wallpaperup.com/uploads/wallpapers/2015/05/01/676003/5a75ea4d0b36541cb73d3a9cc670d0c1-700.jpg" alt="FirstPic" />
-                    <div className='splash-page'>
-                        <h2 className="home-page-logo">qadlee</h2>
-                        <p className="home-page-message">Come for what you love.</p>
-                        <p className="home-page-message">Stay for what you discover.</p>
-                        <nav className="login-signup">
-                            <Link to="/signup"><button className="button" id="signup">Get Started</button></Link>
-                            <br />
-                            <Link to="/login"><button className="button">Log In</button></Link>
-                            <br />
-                            <p className="home-page-message"
-                                id="demo-login"
-                                style={{ textDecoration: "underline" }}
-                                onClick={() => this.props.login(userDemo)}>Try a Demo Log In</p>
-                        </nav>
-                    </div>
-                </div>
-                <div ref={this.myDivToFocus2} className="container" id="second-container">
-                    <div className='splash-page' id="second-splash">
-                        <h2 className="home-page-logo" id="just-q">Q</h2>
-                        <br />
-                        <br />
-                        <p className="home-page-message" id="easy-to-use">Qadlee is so easy to use that it's hard to explain.</p>
-                        <br />
-                        <p className="home-page-message" id="easy-to-use-message">We made it really, really simple for people to make a blog and put whatever they want on it. Stories, photos, GIFs, TV shows, links, quips, dumn jokes, smart, jokes, Spotify tracks, mp3s, videos, fashion, art, deep stuff. Qadlee is 501 million different blogs, filled with literally whatever. </p>
-                    </div>
-                </div>
-                <div ref={this.myDivToFocus3} className="container" id="third-container">
-                    <div className='splash-page' id='third-splash'>
-                        <p className="home-page-message" id="easy-to-use">Qadlee is blogs.</p>
-                        <br />
-                        <p className="home-page-message" id="easy-to-use-message">Turns out that when you make it easy to create interesting things, that's exactly what people do. All those great, random blogs your friends send you, those are Qadlee blogs. We'll help you find and follow blogs like that, and we'll help other people find and follow yours.</p>
-                    </div>
-                </div>
-                <div ref={this.myDivToFocus4} className="container" id="fourth-container">
-                    <div className='splash-page' id='fourth-splash'>
-                        <p className="home-page-message" id="easy-to-use">You already know how this works.</p>
-                        <br />
-                        <p className="home-page-message" id="easy-to-use-message">Once you follow a blog, all of its posts show up in your dashboard, just like you'd expect. See something great? Reblog it to your own blog. Add commenmtary if you like. Make it your own. Other people will do the same to your posts. That's how you meet people here</p>
-                    </div>
-                </div>
-                <div ref={this.myDivToFocus5} className="container" id="fifth-container">
-                    <div className='splash-page'>
-                        <p className="home-page-message" id="easy-to-use">Seriously, put anything you want here.</p>
-                        <br />
-                        <p className="home-page-message" id="easy-to-use-message">Seven post types to get you started. Your brain can do the rest. This thing is yours. Use it however you like.</p>
-                    </div>
-                </div>
-                <div ref={this.myDivToFocus6} className="container">
-                    <img className="background-img" src="https://www.someprettything.com/wp-content/uploads/2018/04/patrick-tomasso-472279-unsplash.jpg" alt="Secondpic" />
-                    <div className='splash-page'>
-                        <p className="home-page-message" id="easy-to-use">Okay, it's not actually hard to explain.</p>
-                        <br />
-                        <p className="home-page-message" id="easy-to-use-message">We lied. But now you understand this thing. So come on in.</p>
-                        <nav className="login-signup">
-                            <Link to="/signup"><button className="button" id="signup">Get Started</button></Link>
-                            <br />
-                            <Link to="/login"><button className="button">Log In</button></Link>
-                            <br />
-                            <p className="home-page-message"
-                                id="demo-login"
-                                style={{ textDecoration: "underline" }}
-                                onClick={() => this.props.login(userDemo)}>Try a Demo Log In</p>
-                        </nav>
-                    </div>
-                </div>
-            </>
-        )
+          <>
+            <div className="navButtons">
+              <ul>
+                <li className="navButtonsItem" onClick={this.handleClick1}>
+                  ●
+                </li>
+                <li className="navButtonsItem" onClick={this.handleClick2}>
+                  ●
+                </li>
+                <li className="navButtonsItem" onClick={this.handleClick3}>
+                  ●
+                </li>
+                <li className="navButtonsItem" onClick={this.handleClick4}>
+                  ●
+                </li>
+                <li className="navButtonsItem" onClick={this.handleClick5}>
+                  ●
+                </li>
+                <li className="navButtonsItem" onClick={this.handleClick6}>
+                  ●
+                </li>
+              </ul>
+            </div>
+            <div
+              ref={this.myDivToFocus1}
+              className="container"
+              id="first-container"
+            >
+              <img
+                className="background-img"
+                src="https://www.wallpaperup.com/uploads/wallpapers/2015/05/01/676003/5a75ea4d0b36541cb73d3a9cc670d0c1-700.jpg"
+                alt="FirstPic"
+              />
+              <div className="splash-page">
+                <h2 className="home-page-logo">qadlee</h2>
+                <p className="home-page-message">Come for what you love.</p>
+                <p className="home-page-message">Stay for what you discover.</p>
+                <nav className="login-signup">
+                  <Link to="/signup">
+                    <button className="button" id="signup">
+                      Get Started
+                    </button>
+                  </Link>
+                  <br />
+                  <Link to="/login">
+                    <button className="button">Log In</button>
+                  </Link>
+                  <br />
+                  <p
+                    className="home-page-message"
+                    id="demo-login"
+                    style={{ textDecoration: "underline" }}
+                    onClick={() => this.props.login(userDemo)}
+                  >
+                    Try a Demo Log In
+                  </p>
+                </nav>
+              </div>
+            </div>
+            <div
+              ref={this.myDivToFocus2}
+              className="container"
+              id="second-container"
+            >
+              <div className="splash-page" id="second-splash">
+                <h2 className="home-page-logo" id="just-q">
+                  Q
+                </h2>
+                <br />
+                <br />
+                <p className="home-page-message" id="easy-to-use">
+                  Qadlee is so easy to use that it's hard to explain.
+                </p>
+                <br />
+                <p className="home-page-message" id="easy-to-use-message">
+                  We made it really, really simple for people to make a blog and
+                  put whatever they want on it. Stories, photos, GIFs, TV shows,
+                  links, quips, dumn jokes, smart, jokes, Spotify tracks, mp3s,
+                  videos, fashion, art, deep stuff. Qadlee is 501 million
+                  different blogs, filled with literally whatever.{" "}
+                </p>
+              </div>
+            </div>
+            <div
+              ref={this.myDivToFocus3}
+              className="container"
+              id="third-container"
+            >
+              <div className="splash-page" id="third-splash">
+                <p className="home-page-message" id="easy-to-use">
+                  Qadlee is blogs.
+                </p>
+                <br />
+                <p className="home-page-message" id="easy-to-use-message">
+                  Turns out that when you make it easy to create interesting
+                  things, that's exactly what people do. All those great, random
+                  blogs your friends send you, those are Qadlee blogs. We'll
+                  help you find and follow blogs like that, and we'll help other
+                  people find and follow yours.
+                </p>
+              </div>
+            </div>
+            <div
+              ref={this.myDivToFocus4}
+              className="container"
+              id="fourth-container"
+            >
+              <div className="splash-page" id="fourth-splash">
+                <p className="home-page-message" id="easy-to-use">
+                  You already know how this works.
+                </p>
+                <br />
+                <p className="home-page-message" id="easy-to-use-message">
+                  Once you follow a blog, all of its posts show up in your
+                  dashboard, just like you'd expect. See something great? Reblog
+                  it to your own blog. Add commenmtary if you like. Make it your
+                  own. Other people will do the same to your posts. That's how
+                  you meet people here
+                </p>
+              </div>
+            </div>
+            <div
+              ref={this.myDivToFocus5}
+              className="container"
+              id="fifth-container"
+            >
+              <div className="splash-page">
+                <p className="home-page-message" id="easy-to-use">
+                  Seriously, put anything you want here.
+                </p>
+                <br />
+                <p className="home-page-message" id="easy-to-use-message">
+                  Seven post types to get you started. Your brain can do the
+                  rest. This thing is yours. Use it however you like.
+                </p>
+              </div>
+            </div>
+            <div ref={this.myDivToFocus6} className="container">
+              <img
+                className="background-img"
+                src="https://www.someprettything.com/wp-content/uploads/2018/04/patrick-tomasso-472279-unsplash.jpg"
+                alt="Secondpic"
+              />
+              <div className="splash-page">
+                <p className="home-page-message" id="easy-to-use">
+                  Okay, it's not actually hard to explain.
+                </p>
+                <br />
+                <p className="home-page-message" id="easy-to-use-message">
+                  We lied. But now you understand this thing. So come on in.
+                </p>
+                <nav className="login-signup">
+                  <Link to="/signup">
+                    <button className="button" id="signup">
+                      Get Started
+                    </button>
+                  </Link>
+                  <br />
+                  <Link to="/login">
+                    <button className="button">Log In</button>
+                  </Link>
+                  <br />
+                  <p
+                    className="home-page-message"
+                    id="demo-login"
+                    style={{ textDecoration: "underline" }}
+                    onClick={() => this.props.login(userDemo)}
+                  >
+                    Try a Demo Log In
+                  </p>
+                </nav>
+              </div>
+            </div>
+          </>
+        );
     };
 };
 
