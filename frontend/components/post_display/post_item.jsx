@@ -22,12 +22,6 @@ class PostItem extends React.Component {
     });
   }
 
-  // closeCommentForm(e) {
-  //     this.setState({ showCommentForm: false }, () => {
-  //       document.removeEventListener("click", this.closeCommentForm);
-  //     });
-  // }
-
   closeCommentForm(e) {
     if (
       this.dropdownCommentForm &&
@@ -126,7 +120,12 @@ class PostItem extends React.Component {
       user_id: parseInt(this.props.currentUser.id),
       post_id: this.props.post.id,
     };
-    // debugger
+    
+    const carr = this.props.post.comments ? Object.values(this.props.post.comments) : null;
+    const comments = (
+      <Comments comments={carr} user={this.props.currentUser} />
+    );
+
     if (
       this.props.post.liked_users &&
       this.props.post.liked_users.includes(this.props.currentUser.id)
@@ -144,10 +143,21 @@ class PostItem extends React.Component {
         </li>
         <li onClick={this.showCommentForm}>
           <i className="far fa-comment item-icon"></i>
+          {this.state.showCommentForm ? (
+            <div
+              className="comment-drop"
+              ref={(element) => {
+                this.dropdownCommentForm = element;
+              }}
+            >
+              {comments}
+              <CommentsForm postId={this.props.post.id}></CommentsForm>
+            </div>
+          ) : null}
         </li>
-        <li>
+        {/* <li>
           <i className="fas fa-retweet item-icon"></i>
-        </li>
+        </li> */}
         <li onClick={() => this.handleLike(likeParams)}>
           <i className={this.klass}></i>
         </li>
@@ -187,9 +197,9 @@ class PostItem extends React.Component {
             </div>
           ) : null}
         </li>
-        <li>
+        {/* <li>
           <i className="fas fa-retweet item-icon"></i>
-        </li>
+        </li> */}
         <li onClick={() => this.handleLike(likeParams)}>
           <i className={this.klass}></i>
         </li>

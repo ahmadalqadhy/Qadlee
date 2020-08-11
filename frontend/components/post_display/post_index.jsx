@@ -13,7 +13,7 @@ class PostIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
+        // this.props.requestUsers();
         this.props.requestPosts();
     }
 

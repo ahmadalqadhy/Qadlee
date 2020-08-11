@@ -1,17 +1,14 @@
 import React from 'react'
 import ModalContainer from '../modal/modal'
 import PostIndexContainer from '../post_display/post_index_container'
-import Navbar from '../navbar/navbar'
+import NavbarContainer from '../navbar/navbar_container'
 
 const Dashboard = ({ currentUser, logout, openModal, closeModal }) => (
     <div className="dashboard-root">
-        <Navbar />
+        <NavbarContainer />
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <button className="header-button" onClick={logout}>Log Out</button>
         <br/>
         <div className="content-in-dashboard">
             <div className="left-side-of-dashboard">
