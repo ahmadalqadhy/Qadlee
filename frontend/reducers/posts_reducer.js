@@ -8,7 +8,6 @@ const PostsReducer = ( state = {}, action ) => {
     let nextState, likeId, like, idx, postId;
     switch (action.type) {
       case RECEIVE_POSTS:
-        // debugger
         return action.posts;
       case RECEIVE_POST:
         return Object.assign({}, { [action.post.id]: action.post }, state);
@@ -19,14 +18,12 @@ const PostsReducer = ( state = {}, action ) => {
       case RECEIVE_COMMENT:
         let post = action.comment.post_id;
         nextState = merge({}, state)
-        // debugger
         nextState[post].comments.push({body: action.comment.body, author_id: action.comment.author_id,});
         return nextState;
       case LIKE_POST:
         nextState = merge({}, state);
         likeId = Object.keys(action.like)[0];
-        like = action.like[likeId];
-        // debugger
+        like = action.like[likeId];  
         nextState[like.post_id].liked_users.push(like.user_id);
         return nextState;
       case UNLIKE_POST:
